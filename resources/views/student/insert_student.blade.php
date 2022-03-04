@@ -44,6 +44,11 @@
                     <h2>Add Teacher Information:</h2>
                     <a href="{{route('add.teacher')}}" class="btn btn-success">Add Teacher</a>
                 </div>
+                <div>
+                    <h2>Add Stuff Information:</h2>
+                    <a href="{{route('add.stuff')}}" class="btn btn-success">Add Stuff</a>
+                </div>
+
             </div>
             <div class="col-md-7">
                 <table class="table-bordered table table-sm bg-info shadow p-3 mb-5 rounded">

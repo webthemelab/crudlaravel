@@ -3,6 +3,9 @@
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StuffController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+
 
 Route::get('/',[StudentController::class, 'index'])->name('Home');
 //store student information
@@ -27,6 +34,8 @@ Route::get('/delete/student/{id}',[StudentController::class, 'deleteStudent'])->
 
 
 
+
+
 //add teacher information
 Route::get('/add/teacher',[TeacherController::class, 'addTeacher'])->name('add.teacher');
 //store Teacher information
@@ -37,3 +46,17 @@ Route::get('/edit/Teacher/{id}',[TeacherController::class, 'editTeacher'])->name
 Route::post('/update/Teacher',[TeacherController::class, 'updateTeacher'])->name('update.teacher');
 //Delete teacher information
 Route::get('/delete/Teacher/{id}',[TeacherController::class, 'deleteTeacher'])->name('delete.teacher');
+
+
+
+
+//Add stuff information
+Route::get('/add/stuff',[StuffController::class, 'addStuff'])->name('add.stuff');
+//store stuff information
+Route::post('/store/stuff',[StuffController::class, 'storeStuff'])->name('store.stuff');
+//Edit stuff information
+Route::get('/edit/stuff/{id}',[StuffController::class, 'editStuff'])->name('edit.stuff');
+//Update stuff information
+Route::post('/update/stuff',[StuffController::class, 'updateStuff'])->name('update.stuff');
+//delete stuff information
+Route::get('/delete/stuff/{id}',[StuffController::class, 'deleteStuff'])->name('delete.stuff');
