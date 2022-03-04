@@ -27,7 +27,7 @@ class StuffController extends Controller
             'name'=>$request->name,
             'photo'=>$image_url,
          ]);
-         return redirect('/add/stuff')->with('sms','stuff insert successfully');
+         return redirect('stuff/add')->with('sms','stuff insert successfully');
     }//end method
 
 
@@ -59,7 +59,7 @@ class StuffController extends Controller
             'name'=>$request->name,
 
         ]);
-        return redirect('/add/stuff')->with('sms','update Information successfully');
+        return redirect('stuff/add')->with('sms','update Information successfully');
     }//end method
 
     //Delete stuff information
@@ -69,7 +69,7 @@ class StuffController extends Controller
         $photo=$stuff->photo;
         unlink($photo);
         $stuff->delete();
-        return redirect('/add/stuff')->with('sms','delete Information successfully');
+        return redirect('stuff/add')->with('sms','delete Information successfully');
 
 
     }//end method

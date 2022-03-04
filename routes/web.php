@@ -49,14 +49,17 @@ Route::get('/delete/Teacher/{id}',[TeacherController::class, 'deleteTeacher'])->
 
 
 
+Route::prefix('stuff')->group(function () {
+    //Add stuff information
+    Route::get('/add',[StuffController::class, 'addStuff'])->name('add.stuff');
+    //store stuff information
+    Route::post('/store',[StuffController::class, 'storeStuff'])->name('store.stuff');
+    //Edit stuff information
+    Route::get('/edit/{id}',[StuffController::class, 'editStuff'])->name('edit.stuff');
+    //Update stuff information
+    Route::post('/update',[StuffController::class, 'updateStuff'])->name('update.stuff');
+    //delete stuff information
+    Route::get('/delete/{id}',[StuffController::class, 'deleteStuff'])->name('delete.stuff');
 
-//Add stuff information
-Route::get('/add/stuff',[StuffController::class, 'addStuff'])->name('add.stuff');
-//store stuff information
-Route::post('/store/stuff',[StuffController::class, 'storeStuff'])->name('store.stuff');
-//Edit stuff information
-Route::get('/edit/stuff/{id}',[StuffController::class, 'editStuff'])->name('edit.stuff');
-//Update stuff information
-Route::post('/update/stuff',[StuffController::class, 'updateStuff'])->name('update.stuff');
-//delete stuff information
-Route::get('/delete/stuff/{id}',[StuffController::class, 'deleteStuff'])->name('delete.stuff');
+});
+
